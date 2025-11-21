@@ -15,20 +15,20 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
 
     const account = getAccount(email);
 
-    if(!account) {      //Exclamação é para quando não se encontrar o valor informado
+    if(!account) {      
         alert("Ops! Verifique o usuário ou a senha.");
         return;
     }
 
     if(account) {
-        if(account.password !== password) {     // o sinal !== significa diferente em JS
+        if(account.password !== password) {     
             alert("Ops! Verifique o usuário ou a senha.");
             return;
         }
 
         saveSession(email, checkSession);
 
-        window.location.href = "home.html";     //href é a url para onde vai ser encaminhado
+        window.location.href = "home.html";     
     }
 });
 

@@ -10,7 +10,6 @@ document.getElementById("button-transactions").addEventListener("click", functio
     window.location.href = "transactions.html"
 });
 
-//ADICIONAR LANÇAMENTO
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -36,7 +35,6 @@ document.getElementById("transaction-form").addEventListener("submit", function(
 
 checkLogged();
 
-//FUNÇÕES
 function checkLogged() {
     if(session) {
         sessionStorage.setItem("logged", session);
@@ -67,7 +65,7 @@ function logout () {
 
 function getCashIn() {
     const transactions = data.transactions;
-    const cashIn = transactions.filter((item) => item.type === "1"); // === significa igual
+    const cashIn = transactions.filter((item) => item.type === "1"); 
     if(cashIn.length) {
         let cashInHtml = ``;
         let limit = 0;
@@ -78,8 +76,8 @@ function getCashIn() {
             limit = cashIn.length;
         }
 
-        for (let index = 0; index < limit; index++) {   // += pega a função que já tem e também adiciona o comando seguinte
-                                                        // o símbolo de crase permite usar código HTML
+        for (let index = 0; index < limit; index++) {   
+                                                        
             cashInHtml += `
             <div class="row mb-4">
             <div class="col-12">
@@ -104,7 +102,7 @@ function getCashIn() {
 
 function getCashOut() {
     const transactions = data.transactions;
-    const cashIn = transactions.filter((item) => item.type === "2"); // === significa igual
+    const cashIn = transactions.filter((item) => item.type === "2");
     if(cashIn.length) {
         let cashInHtml = ``;
         let limit = 0;
@@ -115,8 +113,8 @@ function getCashOut() {
             limit = cashIn.length;
         }
 
-        for (let index = 0; index < limit; index++) {   // += pega a função que já tem e também adiciona o comando seguinte
-                                                        // o símbolo de crase permite usar código HTML
+        for (let index = 0; index < limit; index++) {   
+                                                      
             cashInHtml += `
             <div class="row mb-4">
                 <div class="col-12">
